@@ -139,7 +139,7 @@ public class Program{
 
         Console.WriteLine("Ingrese con cuanto va a pagar?");
         conCuantoPaga=double.Parse(Console.ReadLine());
-        vuelto=monto-conCuantoPaga;
+        vuelto=conCuantoPaga-monto;
 
         listaDePagos.Add(new PagoEftqr(monto,cliente,idPago,0,vuelto));
 
@@ -183,14 +183,14 @@ public class Program{
         foreach (Cliente c in listaDeClientes){
 
             indiceCliente++;
-            Console.WriteLine($"El cliente {c.Nombre} tiene el índice {(indiceCliente+1)}");
+            Console.WriteLine($"El cliente {c.Nombre} tiene el índice {(indiceCliente)}");
 
         }
 
         Console.WriteLine("Elija el índice de cliente");
         int seleccionCliente = int.Parse(Console.ReadLine());
 
-        return listaDeClientes[seleccionCliente];
+        return listaDeClientes[(seleccionCliente-1)];
 
         
     }

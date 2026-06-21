@@ -11,4 +11,9 @@ public class Tarjeta : Pago
 
     public string Tipo {get {return this.tipo;} set {this.tipo=value;}}
 
+    public Tarjeta (double monto, Cliente cliente, int idPago, double recargo,string numero,string tipo):base(monto, cliente, idPago, recargo)
+    {
+        this.numero=numero;
+        this.tipo=tipo;
+    }
 }

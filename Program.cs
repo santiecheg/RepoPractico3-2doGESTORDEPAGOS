@@ -69,6 +69,15 @@ public class Program{
 
     static void RegistrarPago(){
 
+        Console.Clear();
+        Console.WriteLine("Ha elegido registrar pago");
+
+        Console.WriteLine("Elija primero a qué cliente registrar el pago");
+        Cliente clienteApagar = ElegirCliente();
+
+        Console.WriteLine("Elija su método de pago");
+        ElegirMetodoDePago();
+
 
 
     }
@@ -77,6 +86,62 @@ public class Program{
 
 
 
+    }
+
+    static void ElegirMetodoDePago(){
+
+        Console.WriteLine("Elija su método de pago");
+        Console.WriteLine("Opción 1 Pago con efectivo");
+        Console.WriteLine("Opcion 2 Pago con tarjeta (10% de recargo)");
+        
+
+        int metodoDepagoElegido = int.Parse(Console.ReadLine());
+
+        switch (metodoDepagoElegido){
+
+            case 1:
+                PagoConEfectivo();
+                break;
+
+
+            case 2:
+                PagoConTarjeta();
+                break;
+
+        }
+
+
+    }
+
+    static void PagoConEfectivo(){
+
+
+
+    }
+
+    static void PagoConTarjeta(){
+
+        
+
+    }
+
+    static Cliente ElegirCliente(){
+
+        int indiceCliente=0;
+        
+        foreach (Cliente c in listaDeClientes){
+
+            indiceCliente++;
+            Console.WriteLine($"El cliente {c.Nombre} tiene el índice {indiceCliente}");
+
+        }
+
+        Console.WriteLine("Elija el índice de cliente");
+        int seleccionCliente = int.Parse(Console.ReadLine());
+
+        return listaDeClientes[seleccionCliente];
+
+        
     }
 
 }
